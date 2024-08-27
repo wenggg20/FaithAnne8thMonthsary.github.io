@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;600&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffe6f0; /* Light pink background */
+    color: #8b004b; /* Darker pink for text */
+    margin: 0;
+    padding: 0;
+}
+
+/* General Layout */
+.header {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #ff4d88, #ff80aa); /* Gradient background */
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 128, 170, 0.6);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Pacifico', cursive; /* Custom cursive font */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: linear-gradient(135deg, #ff99cc, #ff80aa);
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(255, 77, 136, 0.4);
+}
+
+.tab-button {
+    padding: 20px 50px;
+    background-color: #ff80aa;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    border-radius: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 128, 170, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    transform: rotate(45deg);
+    transition: top 0.5s, left 0.5s;
+    z-index: 0;
+}
+
+.tab-button:hover::before {
+    top: 0;
+    left: 0;
+}
+
+.tab-button:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 128, 170, 0.6);
+}
+
+.tab-button:active {
+    transform: scale(1.05);
+}
+
+.tab-button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Content Sections */
+.content {
+    display: none;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 77, 136, 0.4);
+    background-color: #ffe6f0;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+#flowers:target, #letters:target, #pictures:target {
+    display: block;
+}
+
+/* Images */
+img {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(255, 77, 136, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 77, 136, 0.6);
+}
